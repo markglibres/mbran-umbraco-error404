@@ -14,7 +14,7 @@ MBran Error 404 is a package to protect your website from ugly 404 pages through
 1. Download and install package ([https://www.nuget.org/packages/MBran.Error404/][1])
 2. Browse to your website http://yourdomain.com/pagedoestnotexist
 
-## How to configure the 4040 page:
+## How to configure the 404 page:
 
 * Create a property called "error404" with data type "content picker" from your domain node (where culture hostname is specified)
 * OR create a doc type with alias "error404"
