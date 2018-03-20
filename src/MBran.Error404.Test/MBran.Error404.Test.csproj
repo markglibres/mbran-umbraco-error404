@@ -310,6 +310,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\GenericPage.cshtml" />
+    <Content Include="Views\Error404.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -321,11 +322,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Data\Models\Error404.generated.cs" />
     <Compile Include="App_Data\Models\File.generated.cs" />
     <Compile Include="App_Data\Models\Folder.generated.cs" />
     <Compile Include="App_Data\Models\GenericPage.generated.cs" />
+    <Compile Include="App_Data\Models\HasError404.generated.cs" />
     <Compile Include="App_Data\Models\HasMetaHeader.generated.cs" />
-    <Compile Include="App_Data\Models\HasSiteMap.generated.cs" />
     <Compile Include="App_Data\Models\HasTextAndMedia.generated.cs" />
     <Compile Include="App_Data\Models\Home.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />

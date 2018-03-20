@@ -20,24 +20,24 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	// Mixin content Type 1115 with alias "hasSiteMap"
-	/// <summary>_HasSiteMap</summary>
-	public partial interface IHasSiteMap : IPublishedContent
+	// Mixin content Type 1117 with alias "hasError404"
+	/// <summary>_HasError404</summary>
+	public partial interface IHasError404 : IPublishedContent
 	{
-		/// <summary>sitemapOption</summary>
-		object SitemapOption { get; }
+		/// <summary>Error 404 Page</summary>
+		IPublishedContent Error404 { get; }
 	}
 
-	/// <summary>_HasSiteMap</summary>
-	[PublishedContentModel("hasSiteMap")]
-	public partial class HasSiteMap : PublishedContentModel, IHasSiteMap
+	/// <summary>_HasError404</summary>
+	[PublishedContentModel("hasError404")]
+	public partial class HasError404 : PublishedContentModel, IHasError404
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "hasSiteMap";
+		public new const string ModelTypeAlias = "hasError404";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public HasSiteMap(IPublishedContent content)
+		public HasError404(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -48,21 +48,21 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<HasSiteMap, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<HasError404, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// sitemapOption
+		/// Error 404 Page
 		///</summary>
-		[ImplementPropertyType("sitemapOption")]
-		public object SitemapOption
+		[ImplementPropertyType("error404")]
+		public IPublishedContent Error404
 		{
-			get { return GetSitemapOption(this); }
+			get { return GetError404(this); }
 		}
 
-		/// <summary>Static getter for sitemapOption</summary>
-		public static object GetSitemapOption(IHasSiteMap that) { return that.GetPropertyValue("sitemapOption"); }
+		/// <summary>Static getter for Error 404 Page</summary>
+		public static IPublishedContent GetError404(IHasError404 that) { return that.GetPropertyValue<IPublishedContent>("error404"); }
 	}
 }

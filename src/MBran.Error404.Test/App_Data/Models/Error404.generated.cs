@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
-	/// <summary>Home</summary>
-	[PublishedContentModel("home")]
-	public partial class Home : PublishedContentModel, IHasError404, IHasMetaHeader, IHasTextAndMedia
+	/// <summary>Error404</summary>
+	[PublishedContentModel("error404")]
+	public partial class Error404 : PublishedContentModel, IHasMetaHeader, IHasTextAndMedia
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "home";
+		public new const string ModelTypeAlias = "error404";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Home(IPublishedContent content)
+		public Error404(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,18 +40,9 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Error404, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Error 404 Page
-		///</summary>
-		[ImplementPropertyType("error404")]
-		public IPublishedContent Error404
-		{
-			get { return Umbraco.Web.PublishedContentModels.HasError404.GetError404(this); }
 		}
 
 		///<summary>

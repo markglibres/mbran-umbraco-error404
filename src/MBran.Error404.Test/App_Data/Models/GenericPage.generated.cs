@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Generic Page</summary>
 	[PublishedContentModel("genericPage")]
-	public partial class GenericPage : PublishedContentModel, IHasMetaHeader, IHasSiteMap, IHasTextAndMedia
+	public partial class GenericPage : PublishedContentModel, IHasMetaHeader, IHasTextAndMedia
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "genericPage";
@@ -61,15 +61,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public string MetaTitle
 		{
 			get { return Umbraco.Web.PublishedContentModels.HasMetaHeader.GetMetaTitle(this); }
-		}
-
-		///<summary>
-		/// sitemapOption
-		///</summary>
-		[ImplementPropertyType("sitemapOption")]
-		public object SitemapOption
-		{
-			get { return Umbraco.Web.PublishedContentModels.HasSiteMap.GetSitemapOption(this); }
 		}
 
 		///<summary>
