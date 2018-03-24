@@ -24,3 +24,8 @@ MBran Error 404 is a package to protect your website from ugly 404 pages through
 
 * Multi-tenant support
 * Fallback support 
+
+## Test Project
+
+* u: me@markglibres.com
+* p: admin12345
